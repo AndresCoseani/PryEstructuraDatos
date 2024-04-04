@@ -1,6 +1,6 @@
 ﻿namespace PryEstructuraDatos
 {
-    partial class Datos_del_Desarrollador
+    partial class frmDatosdelDesarrollador
     {
         /// <summary>
         /// Required designer variable.
@@ -130,17 +130,18 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::PryEstructuraDatos.Properties.Resources._20240402_203602a;
-            this.pictureBox1.Location = new System.Drawing.Point(28, 30);
+            this.pictureBox1.Location = new System.Drawing.Point(37, 30);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(132, 178);
+            this.pictureBox1.Size = new System.Drawing.Size(110, 178);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 8;
             this.pictureBox1.TabStop = false;
             // 
-            // Datos_del_Desarrollador
+            // frmDatosdelDesarrollador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.ClientSize = new System.Drawing.Size(564, 236);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label8);
@@ -153,7 +154,7 @@
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.Name = "Datos_del_Desarrollador";
+            this.Name = "frmDatosdelDesarrollador";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Datos del Desarrollador";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

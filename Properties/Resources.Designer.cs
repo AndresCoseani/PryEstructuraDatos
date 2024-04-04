@@ -73,6 +73,26 @@ namespace PryEstructuraDatos.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Cola {
+            get {
+                object obj = ResourceManager.GetObject("Cola", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Pila {
+            get {
+                object obj = ResourceManager.GetObject("Pila", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap shubham_dhage_NsPqV_WsZYY_unsplash {
             get {
                 object obj = ResourceManager.GetObject("shubham-dhage-NsPqV-WsZYY-unsplash", resourceCulture);
