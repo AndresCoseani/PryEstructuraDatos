@@ -48,6 +48,7 @@
   <ItemGroup>
     <Compile Include="clsCola.cs" />
     <Compile Include="clsNodo.cs" />
+    <Compile Include="clsPila.cs" />
     <Compile Include="Datos del Desarrollador.cs">
       <SubType>Form</SubType>
     </Compile>
