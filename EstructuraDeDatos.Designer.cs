@@ -121,6 +121,7 @@
             this.listaSimpleToolStripMenuItem.Name = "listaSimpleToolStripMenuItem";
             this.listaSimpleToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
             this.listaSimpleToolStripMenuItem.Text = "Lista Simple...";
+            this.listaSimpleToolStripMenuItem.Click += new System.EventHandler(this.listaSimpleToolStripMenuItem_Click);
             // 
             // listaDobleToolStripMenuItem
             // 
@@ -183,13 +184,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.BackgroundImage = global::PryEstructuraDatos.Properties.Resources.shubham_dhage_NsPqV_WsZYY_unsplash;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "frmEstructuraDeDatos";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Estructura de Datos";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.EstructuraDeDatos_Load);

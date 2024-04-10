@@ -29,18 +29,13 @@
         private void InitializeComponent()
         {
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.dgvGrillaCola = new System.Windows.Forms.DataGridView();
+            this.dgvGrillaLista = new System.Windows.Forms.DataGridView();
             this.Código = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Trámite = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lstListaSimple = new System.Windows.Forms.ListBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnEliminar = new System.Windows.Forms.Button();
-            this.lblTramite = new System.Windows.Forms.Label();
-            this.lblCodigo = new System.Windows.Forms.Label();
-            this.lblNombre = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtTramite = new System.Windows.Forms.TextBox();
@@ -51,8 +46,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.cboEliminar = new System.Windows.Forms.ComboBox();
             this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvGrillaCola)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvGrillaLista)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -60,7 +56,7 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.dgvGrillaCola);
+            this.groupBox3.Controls.Add(this.dgvGrillaLista);
             this.groupBox3.Controls.Add(this.lstListaSimple);
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.Location = new System.Drawing.Point(14, 237);
@@ -70,17 +66,17 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Listado en una Lista y una Grilla";
             // 
-            // dgvGrillaCola
+            // dgvGrillaLista
             // 
-            this.dgvGrillaCola.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvGrillaCola.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvGrillaLista.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvGrillaLista.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Código,
             this.Nombre,
             this.Trámite});
-            this.dgvGrillaCola.Location = new System.Drawing.Point(204, 29);
-            this.dgvGrillaCola.Name = "dgvGrillaCola";
-            this.dgvGrillaCola.Size = new System.Drawing.Size(427, 164);
-            this.dgvGrillaCola.TabIndex = 1;
+            this.dgvGrillaLista.Location = new System.Drawing.Point(204, 29);
+            this.dgvGrillaLista.Name = "dgvGrillaLista";
+            this.dgvGrillaLista.Size = new System.Drawing.Size(427, 164);
+            this.dgvGrillaLista.TabIndex = 1;
             // 
             // Código
             // 
@@ -110,12 +106,8 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.cboEliminar);
             this.groupBox2.Controls.Add(this.btnEliminar);
-            this.groupBox2.Controls.Add(this.lblTramite);
-            this.groupBox2.Controls.Add(this.lblCodigo);
-            this.groupBox2.Controls.Add(this.lblNombre);
-            this.groupBox2.Controls.Add(this.label6);
-            this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(444, 14);
@@ -133,53 +125,12 @@
             this.btnEliminar.TabIndex = 7;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
-            // 
-            // lblTramite
-            // 
-            this.lblTramite.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblTramite.Location = new System.Drawing.Point(88, 104);
-            this.lblTramite.Name = "lblTramite";
-            this.lblTramite.Size = new System.Drawing.Size(114, 23);
-            this.lblTramite.TabIndex = 8;
-            // 
-            // lblCodigo
-            // 
-            this.lblCodigo.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblCodigo.Location = new System.Drawing.Point(114, 33);
-            this.lblCodigo.Name = "lblCodigo";
-            this.lblCodigo.Size = new System.Drawing.Size(88, 23);
-            this.lblCodigo.TabIndex = 6;
-            // 
-            // lblNombre
-            // 
-            this.lblNombre.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblNombre.Location = new System.Drawing.Point(88, 69);
-            this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(114, 23);
-            this.lblNombre.TabIndex = 7;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(6, 108);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(60, 17);
-            this.label6.TabIndex = 5;
-            this.label6.Text = "Trámite:";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(6, 69);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(62, 17);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "Nombre:";
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(6, 34);
+            this.label4.Location = new System.Drawing.Point(6, 66);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(56, 17);
             this.label4.TabIndex = 3;
@@ -224,6 +175,7 @@
             this.Agregar.TabIndex = 3;
             this.Agregar.Text = "Agregar";
             this.Agregar.UseVisualStyleBackColor = true;
+            this.Agregar.Click += new System.EventHandler(this.Agregar_Click);
             // 
             // txtCodigo
             // 
@@ -268,6 +220,16 @@
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
             // 
+            // cboEliminar
+            // 
+            this.cboEliminar.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboEliminar.FormattingEnabled = true;
+            this.cboEliminar.Location = new System.Drawing.Point(81, 63);
+            this.cboEliminar.Name = "cboEliminar";
+            this.cboEliminar.Size = new System.Drawing.Size(119, 24);
+            this.cboEliminar.TabIndex = 8;
+            this.cboEliminar.SelectedIndexChanged += new System.EventHandler(this.cboEliminar_SelectedIndexChanged);
+            // 
             // frmListaSimple
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -279,9 +241,11 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.pictureBox1);
             this.Name = "frmListaSimple";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmListaSimple";
+            this.Load += new System.EventHandler(this.frmListaSimple_Load);
             this.groupBox3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvGrillaCola)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvGrillaLista)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
@@ -294,18 +258,13 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.DataGridView dgvGrillaCola;
+        private System.Windows.Forms.DataGridView dgvGrillaLista;
         private System.Windows.Forms.DataGridViewTextBoxColumn Código;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn Trámite;
         private System.Windows.Forms.ListBox lstListaSimple;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button btnEliminar;
-        private System.Windows.Forms.Label lblTramite;
-        private System.Windows.Forms.Label lblCodigo;
-        private System.Windows.Forms.Label lblNombre;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox txtTramite;
@@ -316,5 +275,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.ComboBox cboEliminar;
     }
 }
