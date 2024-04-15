@@ -223,7 +223,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::PryEstructuraDatos.Properties.Resources.Lista_Simple;
+            //this.pictureBox1.Image = global::PryEstructuraDatos.Properties.Resources.Lista_Simple;
             this.pictureBox1.Location = new System.Drawing.Point(14, 14);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(186, 202);

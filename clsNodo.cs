@@ -13,6 +13,7 @@ namespace PryEstructuraDatos
         private String nom;
         private String tra;
         private clsNodo sig;
+        private clsNodo ant;
 
         //propiedades del nodo
         public Int32 Codigo
@@ -34,6 +35,11 @@ namespace PryEstructuraDatos
         {
             get { return sig; }
             set { sig = value; }
+        }
+        public clsNodo Anterior
+        {
+            get { return ant; }
+            set { ant = value; }
         }
 
     }

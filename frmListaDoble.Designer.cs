@@ -36,6 +36,8 @@
             this.Trámite = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lstListaDoble = new System.Windows.Forms.ListBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.cboEliminar = new System.Windows.Forms.ComboBox();
+            this.btnEliminar = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtTramite = new System.Windows.Forms.TextBox();
@@ -46,11 +48,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnEliminar = new System.Windows.Forms.Button();
-            this.cboEliminar = new System.Windows.Forms.ComboBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.rdoDescendiente = new System.Windows.Forms.RadioButton();
             this.rdoAscendiente = new System.Windows.Forms.RadioButton();
+            this.rdoDescendiente = new System.Windows.Forms.RadioButton();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGrillaListaDoble)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -122,6 +122,24 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Elemento Eliminado";
             // 
+            // cboEliminar
+            // 
+            this.cboEliminar.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboEliminar.FormattingEnabled = true;
+            this.cboEliminar.Location = new System.Drawing.Point(82, 31);
+            this.cboEliminar.Name = "cboEliminar";
+            this.cboEliminar.Size = new System.Drawing.Size(119, 24);
+            this.cboEliminar.TabIndex = 9;
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.Location = new System.Drawing.Point(6, 69);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(196, 47);
+            this.btnEliminar.TabIndex = 7;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.UseVisualStyleBackColor = true;
+            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -170,6 +188,7 @@
             this.Agregar.TabIndex = 3;
             this.Agregar.Text = "Agregar";
             this.Agregar.UseVisualStyleBackColor = true;
+            this.Agregar.Click += new System.EventHandler(this.Agregar_Click);
             // 
             // txtCodigo
             // 
@@ -215,24 +234,6 @@
             this.pictureBox1.TabIndex = 8;
             this.pictureBox1.TabStop = false;
             // 
-            // btnEliminar
-            // 
-            this.btnEliminar.Location = new System.Drawing.Point(6, 69);
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(196, 47);
-            this.btnEliminar.TabIndex = 7;
-            this.btnEliminar.Text = "Eliminar";
-            this.btnEliminar.UseVisualStyleBackColor = true;
-            // 
-            // cboEliminar
-            // 
-            this.cboEliminar.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboEliminar.FormattingEnabled = true;
-            this.cboEliminar.Location = new System.Drawing.Point(82, 31);
-            this.cboEliminar.Name = "cboEliminar";
-            this.cboEliminar.Size = new System.Drawing.Size(119, 24);
-            this.cboEliminar.TabIndex = 9;
-            // 
             // groupBox4
             // 
             this.groupBox4.Controls.Add(this.rdoAscendiente);
@@ -245,17 +246,6 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Listar Datos";
             // 
-            // rdoDescendiente
-            // 
-            this.rdoDescendiente.AutoSize = true;
-            this.rdoDescendiente.Location = new System.Drawing.Point(21, 44);
-            this.rdoDescendiente.Name = "rdoDescendiente";
-            this.rdoDescendiente.Size = new System.Drawing.Size(113, 21);
-            this.rdoDescendiente.TabIndex = 1;
-            this.rdoDescendiente.TabStop = true;
-            this.rdoDescendiente.Text = "Descendiente";
-            this.rdoDescendiente.UseVisualStyleBackColor = true;
-            // 
             // rdoAscendiente
             // 
             this.rdoAscendiente.AutoSize = true;
@@ -266,6 +256,17 @@
             this.rdoAscendiente.TabStop = true;
             this.rdoAscendiente.Text = "Ascendiente";
             this.rdoAscendiente.UseVisualStyleBackColor = true;
+            // 
+            // rdoDescendiente
+            // 
+            this.rdoDescendiente.AutoSize = true;
+            this.rdoDescendiente.Location = new System.Drawing.Point(21, 44);
+            this.rdoDescendiente.Name = "rdoDescendiente";
+            this.rdoDescendiente.Size = new System.Drawing.Size(113, 21);
+            this.rdoDescendiente.TabIndex = 1;
+            this.rdoDescendiente.TabStop = true;
+            this.rdoDescendiente.Text = "Descendiente";
+            this.rdoDescendiente.UseVisualStyleBackColor = true;
             // 
             // frmListaDoble
             // 
@@ -281,6 +282,7 @@
             this.Name = "frmListaDoble";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Lista Doblemente Enlazada";
+            this.Load += new System.EventHandler(this.frmListaDoble_Load);
             this.groupBox3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvGrillaListaDoble)).EndInit();
             this.groupBox2.ResumeLayout(false);

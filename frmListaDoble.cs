@@ -17,6 +17,24 @@ namespace PryEstructuraDatos
             InitializeComponent();
         }
 
-       
+        private void frmListaDoble_Load(object sender, EventArgs e)
+        {
+
+        }
+        clsListaDoble ListaDoble = new clsListaDoble();
+        private void Agregar_Click(object sender, EventArgs e)
+        {
+            clsNodo ObjNodo = new clsNodo();
+            ObjNodo.Codigo = Convert.ToInt32(txtCodigo.Text);
+            ObjNodo.Nombre = txtNombre.Text;
+            ObjNodo.Tramite = txtTramite.Text;
+            ListaDoble.Agregar(ObjNodo);//vinculamos el objeto nodo a la cola
+            ListaDoble.Recorrer(dgvGrillaListaDoble);
+            ListaDoble.Recorrer(lstListaDoble);
+            ListaDoble.Recorrer(cboEliminar);
+            txtCodigo.Text = "";
+            txtNombre.Text = "";
+            txtTramite.Text = "";
+        }
     }
 }
