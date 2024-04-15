@@ -16,5 +16,7 @@ namespace PryEstructuraDatos
         {
             InitializeComponent();
         }
+
+       
     }
 }

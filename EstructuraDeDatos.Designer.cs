@@ -100,33 +100,33 @@
             // colaToolStripMenuItem
             // 
             this.colaToolStripMenuItem.Name = "colaToolStripMenuItem";
-            this.colaToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.colaToolStripMenuItem.Size = new System.Drawing.Size(159, 24);
             this.colaToolStripMenuItem.Text = "Cola...";
             this.colaToolStripMenuItem.Click += new System.EventHandler(this.colaToolStripMenuItem_Click_1);
             // 
             // pilaToolStripMenuItem
             // 
             this.pilaToolStripMenuItem.Name = "pilaToolStripMenuItem";
-            this.pilaToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.pilaToolStripMenuItem.Size = new System.Drawing.Size(159, 24);
             this.pilaToolStripMenuItem.Text = "Pila...";
             this.pilaToolStripMenuItem.Click += new System.EventHandler(this.pilaToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(156, 6);
             // 
             // listaSimpleToolStripMenuItem
             // 
             this.listaSimpleToolStripMenuItem.Name = "listaSimpleToolStripMenuItem";
-            this.listaSimpleToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.listaSimpleToolStripMenuItem.Size = new System.Drawing.Size(159, 24);
             this.listaSimpleToolStripMenuItem.Text = "Lista Simple...";
             this.listaSimpleToolStripMenuItem.Click += new System.EventHandler(this.listaSimpleToolStripMenuItem_Click);
             // 
             // listaDobleToolStripMenuItem
             // 
             this.listaDobleToolStripMenuItem.Name = "listaDobleToolStripMenuItem";
-            this.listaDobleToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.listaDobleToolStripMenuItem.Size = new System.Drawing.Size(159, 24);
             this.listaDobleToolStripMenuItem.Text = "Lista Doble...";
             // 
             // estructurasNoLinealesToolStripMenuItem
@@ -184,6 +184,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.BackgroundImage = global::PryEstructuraDatos.Properties.Resources.shubham_dhage_NsPqV_WsZYY_unsplash;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.menuStrip1);
