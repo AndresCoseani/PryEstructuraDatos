@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmListaDoble));
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.dgvGrillaListaDoble = new System.Windows.Forms.DataGridView();
             this.Código = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -40,23 +39,23 @@
             this.btnEliminar = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnAgregar = new System.Windows.Forms.Button();
             this.txtTramite = new System.Windows.Forms.TextBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
-            this.Agregar = new System.Windows.Forms.Button();
             this.txtCodigo = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.rdoAscendiente = new System.Windows.Forms.RadioButton();
             this.rdoDescendiente = new System.Windows.Forms.RadioButton();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGrillaListaDoble)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox3
@@ -139,6 +138,7 @@
             this.btnEliminar.TabIndex = 7;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // label4
             // 
@@ -151,9 +151,9 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnAgregar);
             this.groupBox1.Controls.Add(this.txtTramite);
             this.groupBox1.Controls.Add(this.txtNombre);
-            this.groupBox1.Controls.Add(this.Agregar);
             this.groupBox1.Controls.Add(this.txtCodigo);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
@@ -165,6 +165,16 @@
             this.groupBox1.TabIndex = 9;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Nuevo Elemento";
+            // 
+            // btnAgregar
+            // 
+            this.btnAgregar.Location = new System.Drawing.Point(6, 151);
+            this.btnAgregar.Name = "btnAgregar";
+            this.btnAgregar.Size = new System.Drawing.Size(196, 47);
+            this.btnAgregar.TabIndex = 10;
+            this.btnAgregar.Text = "Agregar";
+            this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // txtTramite
             // 
@@ -180,22 +190,13 @@
             this.txtNombre.Size = new System.Drawing.Size(114, 23);
             this.txtNombre.TabIndex = 5;
             // 
-            // Agregar
-            // 
-            this.Agregar.Location = new System.Drawing.Point(6, 151);
-            this.Agregar.Name = "Agregar";
-            this.Agregar.Size = new System.Drawing.Size(196, 47);
-            this.Agregar.TabIndex = 3;
-            this.Agregar.Text = "Agregar";
-            this.Agregar.UseVisualStyleBackColor = true;
-            this.Agregar.Click += new System.EventHandler(this.Agregar_Click);
-            // 
             // txtCodigo
             // 
             this.txtCodigo.Location = new System.Drawing.Point(114, 33);
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(88, 23);
             this.txtCodigo.TabIndex = 4;
+            this.txtCodigo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCodigo_KeyPress);
             // 
             // label3
             // 
@@ -224,16 +225,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Código:";
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(10, 14);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(186, 202);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 8;
-            this.pictureBox1.TabStop = false;
-            // 
             // groupBox4
             // 
             this.groupBox4.Controls.Add(this.rdoAscendiente);
@@ -256,6 +247,7 @@
             this.rdoAscendiente.TabStop = true;
             this.rdoAscendiente.Text = "Ascendiente";
             this.rdoAscendiente.UseVisualStyleBackColor = true;
+            this.rdoAscendiente.CheckedChanged += new System.EventHandler(this.rdoAscendiente_CheckedChanged);
             // 
             // rdoDescendiente
             // 
@@ -267,6 +259,17 @@
             this.rdoDescendiente.TabStop = true;
             this.rdoDescendiente.Text = "Descendiente";
             this.rdoDescendiente.UseVisualStyleBackColor = true;
+            this.rdoDescendiente.CheckedChanged += new System.EventHandler(this.rdoDescendiente_CheckedChanged);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::PryEstructuraDatos.Properties.Resources.Lista_Doble;
+            this.pictureBox2.Location = new System.Drawing.Point(12, 12);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(185, 202);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 12;
+            this.pictureBox2.TabStop = false;
             // 
             // frmListaDoble
             // 
@@ -274,11 +277,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.ClientSize = new System.Drawing.Size(658, 450);
+            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.pictureBox1);
             this.Name = "frmListaDoble";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Lista Doblemente Enlazada";
@@ -289,9 +292,9 @@
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -309,16 +312,16 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox txtTramite;
         private System.Windows.Forms.TextBox txtNombre;
-        private System.Windows.Forms.Button Agregar;
         private System.Windows.Forms.TextBox txtCodigo;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.ComboBox cboEliminar;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.RadioButton rdoDescendiente;
         private System.Windows.Forms.RadioButton rdoAscendiente;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Button btnAgregar;
     }
 }

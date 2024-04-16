@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+
 
 namespace PryEstructuraDatos
 {
@@ -133,6 +135,78 @@ namespace PryEstructuraDatos
                 combo.Items.Add(Aux.Nombre);
                 Aux = Aux.Siguiente;
             }
+
+        }
+        public void Recorrer()
+        {
+            clsNodo Aux = Primero;
+            StreamWriter AD = new StreamWriter("ListaDoble.csv", false, Encoding.UTF8);
+            AD.WriteLine("Lista de espera\n");
+            AD.WriteLine("Código;Nombre,Tramite");
+            while (Aux != null)
+            {
+                AD.Write(Aux.Codigo);
+                AD.Write(";");
+                AD.Write(Aux.Nombre);
+                AD.Write(";");
+                AD.WriteLine(Aux.Tramite);
+                Aux = Aux.Siguiente;
+            }
+            AD.Close();
+
+        }
+
+
+        //DESCENDIENTE
+        public void RecorrerDes(DataGridView Grilla)
+        {
+            clsNodo aux = Ultimo;
+            Grilla.Rows.Clear();
+            while (aux != null)
+            {
+                Grilla.Rows.Add(aux.Codigo, aux.Nombre, aux.Tramite);
+                aux = aux.Anterior;
+            }
+
+        }
+        public void RecorrerDes(ListBox lista)
+        {
+            clsNodo Aux = Ultimo;
+            lista.Items.Clear();
+            while (Aux != null)
+            {
+                lista.Items.Add(Aux.Codigo);
+                Aux = Aux.Anterior;
+            }
+
+        }
+        public void RecorrerDes(ComboBox combo)
+        {
+            clsNodo Aux = Ultimo;
+            combo.Items.Clear();
+            while (Aux != null)
+            {
+                combo.Items.Add(Aux.Nombre);
+                Aux = Aux.Anterior;
+            }
+
+        }
+        public void RecorrerDes()
+        {
+            clsNodo Aux = Ultimo;
+            StreamWriter AD = new StreamWriter("Cola.csv", false, Encoding.UTF8);
+            AD.WriteLine("Lista de espera\n");
+            AD.WriteLine("Código;Nombre,Tramite");
+            while (Aux != null)
+            {
+                AD.Write(Aux.Codigo);
+                AD.Write(";");
+                AD.Write(Aux.Nombre);
+                AD.Write(";");
+                AD.WriteLine(Aux.Tramite);
+                Aux = Aux.Anterior;
+            }
+            AD.Close();
 
         }
     }

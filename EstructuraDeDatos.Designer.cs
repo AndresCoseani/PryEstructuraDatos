@@ -128,6 +128,7 @@
             this.listaDobleToolStripMenuItem.Name = "listaDobleToolStripMenuItem";
             this.listaDobleToolStripMenuItem.Size = new System.Drawing.Size(159, 24);
             this.listaDobleToolStripMenuItem.Text = "Lista Doble...";
+            this.listaDobleToolStripMenuItem.Click += new System.EventHandler(this.listaDobleToolStripMenuItem_Click);
             // 
             // estructurasNoLinealesToolStripMenuItem
             // 
@@ -184,7 +185,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.BackgroundImage = global::PryEstructuraDatos.Properties.Resources.shubham_dhage_NsPqV_WsZYY_unsplash;
+            this.BackgroundImage = global::PryEstructuraDatos.Properties.Resources.Fondo;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.menuStrip1);

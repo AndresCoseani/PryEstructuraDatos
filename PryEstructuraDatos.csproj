@@ -110,11 +110,17 @@
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -125,22 +131,25 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\20240402_203602a.jpg" />
+    <Folder Include="Resources\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\shubham-dhage-NsPqV-WsZYY-unsplash.jpg" />
+    <None Include="Images\Foto Desarrollador.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Cola.jpeg" />
+    <None Include="Images\Pila.jpeg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Pila.jpeg" />
+    <None Include="Images\Fondo.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Lista Simple1.png" />
+    <None Include="Images\Cola.jpeg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Lista Doble.png" />
+    <None Include="Images\Lista Simple.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Lista Doble.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

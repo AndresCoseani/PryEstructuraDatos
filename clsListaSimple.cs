@@ -101,7 +101,7 @@ namespace PryEstructuraDatos
         public void Recorrer()
         {
             clsNodo Aux = Primero;
-            StreamWriter AD = new StreamWriter("Cola.csv", false, Encoding.UTF8);
+            StreamWriter AD = new StreamWriter("ListaSimple.csv", false, Encoding.UTF8);
             AD.WriteLine("Lista de espera\n");
             AD.WriteLine("Código;Nombre,Tramite");
             while (Aux != null)
