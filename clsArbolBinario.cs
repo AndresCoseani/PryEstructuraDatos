@@ -137,14 +137,14 @@ namespace PryEstructuraDatos
                 PreOrden(R.Derecho, NodoPadre);
             }
         }
-        public void Recorrer()
-        {
-           StreamWriter AD = new StreamWriter("Cola.csv", false, Encoding.UTF8);
+        //public void Recorrer()
+        //{
+        //   StreamWriter AD = new StreamWriter("Cola.csv", false, Encoding.UTF8);
            
-            InOrdenAsc(AD, Raiz);
-            AD.Close();
+        //    InOrdenAsc(AD, Raiz);
+        //    AD.Close();
           
-        }
+        //}
         //private void InOrdenAsc(TextWriter AD, clsNodo R)
         //{
         //    if (R.Izquierdo != null)

@@ -29,6 +29,11 @@ namespace PryEstructuraDatos
         clsArbolBinario Arbol = new clsArbolBinario();
         private void btnAgregar_Click(object sender, EventArgs e)
         {
+            if (txtCodigo.Text == "")
+            {
+                MessageBox.Show("Ingrese un código");
+
+            }
             clsNodo ObjNodo = new clsNodo();
             ObjNodo.Codigo = Convert.ToInt32(txtCodigo.Text);
             ObjNodo.Nombre = txtNombre.Text;
@@ -44,17 +49,25 @@ namespace PryEstructuraDatos
                 Arbol.Recorrer(cboEliminar);
                 Arbol.Recorrer(tvwArbolBinario);
             }
-            if (rdoPreorder.Checked == true)
+            if (rdoPreorden.Checked == true)
             {
                 Arbol.Recorrer(dgvGrillaLista);
                 Arbol.Recorrer(cboEliminar);
                 Arbol.Recorrer(tvwArbolBinario);
             }
-            if (rdoPreorder.Checked == true)
+            if (rdoPostorden.Checked == true)
             {
                 Arbol.Recorrer(dgvGrillaLista);
                 Arbol.Recorrer(cboEliminar);
                 Arbol.Recorrer(tvwArbolBinario);
+            }
+        }
+
+        private void txtCodigo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back)
+            {
+                e.Handled = true;
             }
         }
     }

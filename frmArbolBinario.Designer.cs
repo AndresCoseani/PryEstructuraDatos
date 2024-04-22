@@ -30,7 +30,7 @@
         {
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.rdoPostorden = new System.Windows.Forms.RadioButton();
-            this.rdoPreorder = new System.Windows.Forms.RadioButton();
+            this.rdoPreorden = new System.Windows.Forms.RadioButton();
             this.rdoInorden = new System.Windows.Forms.RadioButton();
             this.dgvGrillaLista = new System.Windows.Forms.DataGridView();
             this.Código = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -59,7 +59,7 @@
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.rdoPostorden);
-            this.groupBox3.Controls.Add(this.rdoPreorder);
+            this.groupBox3.Controls.Add(this.rdoPreorden);
             this.groupBox3.Controls.Add(this.rdoInorden);
             this.groupBox3.Controls.Add(this.dgvGrillaLista);
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -81,16 +81,16 @@
             this.rdoPostorden.Text = "Post-Orden";
             this.rdoPostorden.UseVisualStyleBackColor = true;
             // 
-            // rdoPreorder
+            // rdoPreorden
             // 
-            this.rdoPreorder.AutoSize = true;
-            this.rdoPreorder.Location = new System.Drawing.Point(34, 97);
-            this.rdoPreorder.Name = "rdoPreorder";
-            this.rdoPreorder.Size = new System.Drawing.Size(93, 21);
-            this.rdoPreorder.TabIndex = 3;
-            this.rdoPreorder.TabStop = true;
-            this.rdoPreorder.Text = "Pre-Orden";
-            this.rdoPreorder.UseVisualStyleBackColor = true;
+            this.rdoPreorden.AutoSize = true;
+            this.rdoPreorden.Location = new System.Drawing.Point(34, 97);
+            this.rdoPreorden.Name = "rdoPreorden";
+            this.rdoPreorden.Size = new System.Drawing.Size(93, 21);
+            this.rdoPreorden.TabIndex = 3;
+            this.rdoPreorden.TabStop = true;
+            this.rdoPreorden.Text = "Pre-Orden";
+            this.rdoPreorden.UseVisualStyleBackColor = true;
             // 
             // rdoInorden
             // 
@@ -221,6 +221,7 @@
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(88, 23);
             this.txtCodigo.TabIndex = 4;
+            this.txtCodigo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCodigo_KeyPress);
             // 
             // label3
             // 
@@ -277,6 +278,7 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "frmArbolBinario";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ArbolBinario";
             this.Load += new System.EventHandler(this.frmArbolBinario_Load);
             this.groupBox3.ResumeLayout(false);
@@ -293,7 +295,7 @@
         #endregion
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.RadioButton rdoPostorden;
-        private System.Windows.Forms.RadioButton rdoPreorder;
+        private System.Windows.Forms.RadioButton rdoPreorden;
         private System.Windows.Forms.RadioButton rdoInorden;
         private System.Windows.Forms.DataGridView dgvGrillaLista;
         private System.Windows.Forms.DataGridViewTextBoxColumn Código;

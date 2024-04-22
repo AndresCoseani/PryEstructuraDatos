@@ -113,10 +113,12 @@ namespace PryEstructuraDatos
             {
                 e.Handled = true;
             }
-            //else
-            //{
-            //    e.Handled= false;
-            //}
+            
+        }
+
+        private void txtCodigo_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
