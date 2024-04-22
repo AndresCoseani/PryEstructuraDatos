@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.rdoPostorden = new System.Windows.Forms.RadioButton();
+            this.rdoPreorder = new System.Windows.Forms.RadioButton();
+            this.rdoInorden = new System.Windows.Forms.RadioButton();
             this.dgvGrillaLista = new System.Windows.Forms.DataGridView();
             this.Código = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -46,9 +49,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.btnEquilibrar = new System.Windows.Forms.Button();
-            this.rdoInorden = new System.Windows.Forms.RadioButton();
-            this.rdoPreorder = new System.Windows.Forms.RadioButton();
-            this.rdoPostorden = new System.Windows.Forms.RadioButton();
             this.tvwArbolBinario = new System.Windows.Forms.TreeView();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGrillaLista)).BeginInit();
@@ -69,6 +69,41 @@
             this.groupBox3.TabIndex = 14;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Listado en una Lista y una Grilla";
+            // 
+            // rdoPostorden
+            // 
+            this.rdoPostorden.AutoSize = true;
+            this.rdoPostorden.Location = new System.Drawing.Point(34, 142);
+            this.rdoPostorden.Name = "rdoPostorden";
+            this.rdoPostorden.Size = new System.Drawing.Size(99, 21);
+            this.rdoPostorden.TabIndex = 4;
+            this.rdoPostorden.TabStop = true;
+            this.rdoPostorden.Text = "Post-Orden";
+            this.rdoPostorden.UseVisualStyleBackColor = true;
+            // 
+            // rdoPreorder
+            // 
+            this.rdoPreorder.AutoSize = true;
+            this.rdoPreorder.Location = new System.Drawing.Point(34, 97);
+            this.rdoPreorder.Name = "rdoPreorder";
+            this.rdoPreorder.Size = new System.Drawing.Size(93, 21);
+            this.rdoPreorder.TabIndex = 3;
+            this.rdoPreorder.TabStop = true;
+            this.rdoPreorder.Text = "Pre-Orden";
+            this.rdoPreorder.UseVisualStyleBackColor = true;
+            // 
+            // rdoInorden
+            // 
+            this.rdoInorden.AutoSize = true;
+            this.rdoInorden.Checked = true;
+            this.rdoInorden.Location = new System.Drawing.Point(34, 51);
+            this.rdoInorden.Name = "rdoInorden";
+            this.rdoInorden.Size = new System.Drawing.Size(82, 21);
+            this.rdoInorden.TabIndex = 2;
+            this.rdoInorden.TabStop = true;
+            this.rdoInorden.Text = "In-Orden";
+            this.rdoInorden.UseVisualStyleBackColor = true;
+            this.rdoInorden.CheckedChanged += new System.EventHandler(this.rdoInorden_CheckedChanged);
             // 
             // dgvGrillaLista
             // 
@@ -178,6 +213,7 @@
             this.btnAgregar.TabIndex = 3;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // txtCodigo
             // 
@@ -222,39 +258,6 @@
             this.btnEquilibrar.Text = "Equilibrar";
             this.btnEquilibrar.UseVisualStyleBackColor = true;
             // 
-            // rdoInorden
-            // 
-            this.rdoInorden.AutoSize = true;
-            this.rdoInorden.Location = new System.Drawing.Point(34, 51);
-            this.rdoInorden.Name = "rdoInorden";
-            this.rdoInorden.Size = new System.Drawing.Size(82, 21);
-            this.rdoInorden.TabIndex = 2;
-            this.rdoInorden.TabStop = true;
-            this.rdoInorden.Text = "In-Orden";
-            this.rdoInorden.UseVisualStyleBackColor = true;
-            // 
-            // rdoPreorder
-            // 
-            this.rdoPreorder.AutoSize = true;
-            this.rdoPreorder.Location = new System.Drawing.Point(34, 97);
-            this.rdoPreorder.Name = "rdoPreorder";
-            this.rdoPreorder.Size = new System.Drawing.Size(93, 21);
-            this.rdoPreorder.TabIndex = 3;
-            this.rdoPreorder.TabStop = true;
-            this.rdoPreorder.Text = "Pre-Orden";
-            this.rdoPreorder.UseVisualStyleBackColor = true;
-            // 
-            // rdoPostorden
-            // 
-            this.rdoPostorden.AutoSize = true;
-            this.rdoPostorden.Location = new System.Drawing.Point(34, 142);
-            this.rdoPostorden.Name = "rdoPostorden";
-            this.rdoPostorden.Size = new System.Drawing.Size(99, 21);
-            this.rdoPostorden.TabIndex = 4;
-            this.rdoPostorden.TabStop = true;
-            this.rdoPostorden.Text = "Post-Orden";
-            this.rdoPostorden.UseVisualStyleBackColor = true;
-            // 
             // tvwArbolBinario
             // 
             this.tvwArbolBinario.Location = new System.Drawing.Point(16, 18);
@@ -274,7 +277,7 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "frmArbolBinario";
-            this.Text = "drmArbolBinario";
+            this.Text = "ArbolBinario";
             this.Load += new System.EventHandler(this.frmArbolBinario_Load);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();

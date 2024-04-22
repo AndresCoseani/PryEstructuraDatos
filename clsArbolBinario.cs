@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace PryEstructuraDatos
 {
@@ -88,27 +89,81 @@ namespace PryEstructuraDatos
                 InOrdenAsc(Dgv, R.Derecho);
             }
         }
+        public void PreOrden(clsNodo R, DataGridView Dgv)
+        {
+            
+            Dgv.Rows.Add(Dgv);
+            if (R.Izquierdo != null)
+            {
+                PreOrden(R.Izquierdo, Dgv);
+            }
+            if (R.Derecho != null)
+            {
+                PreOrden(R.Derecho, Dgv);
+            }
+        }
+        public void PostOrden(clsNodo R, DataGridView Dgv)
+        {
+            
+            if (R.Izquierdo != null)
+            {
+                PostOrden(R.Izquierdo, Dgv);
+            }
+            if (R.Derecho != null)
+            {
+                PostOrden(R.Derecho, Dgv);
+            }
+            Dgv.Rows.Add(Dgv);
+        }
 
         public void Recorrer(TreeView tree)
         {
             tree.Nodes.Clear();
             TreeNode NodoPadre = new TreeNode("Arbol");
             tree.Nodes.Add(NodoPadre);
-            PreOrder(Raiz, NodoPadre);
+            PreOrden(Raiz, NodoPadre);
             tree.ExpandAll();
         }
-        public void PreOrder(clsNodo R, TreeNode nodoTreeView)
+        public void PreOrden(clsNodo R, TreeNode nodoTreeView)
         {
             TreeNode NodoPadre = new TreeNode(R.Codigo.ToString());
             nodoTreeView.Nodes.Add(NodoPadre);
             if (R.Izquierdo != null)
             {
-                PreOrder(R.Izquierdo, NodoPadre);
+                PreOrden(R.Izquierdo, NodoPadre);
             }
             if (R.Derecho != null)
             {
-                PreOrder(R.Derecho, NodoPadre);
+                PreOrden(R.Derecho, NodoPadre);
             }
         }
+        public void Recorrer()
+        {
+           StreamWriter AD = new StreamWriter("Cola.csv", false, Encoding.UTF8);
+           
+            InOrdenAsc(AD, Raiz);
+            AD.Close();
+          
+        }
+        //private void InOrdenAsc(TextWriter AD, clsNodo R)
+        //{
+        //    if (R.Izquierdo != null)
+        //    {
+        //        InOrdenAsc(AD, R.Izquierdo);
+        //    }
+        //    while (Aux != null)
+        //    {
+        //        AD.Write(Aux.Codigo);
+        //        AD.Write(";");
+        //        AD.Write(Aux.Nombre);
+        //        AD.Write(";");
+        //        AD.WriteLine(Aux.Tramite);
+        //        Aux = Aux.Siguiente;
+        //    }
+        //    if (R.Derecho != null)
+        //    {
+        //        InOrdenAsc(AD, R.Derecho);
+        //    }
+        //}
     }
 }
