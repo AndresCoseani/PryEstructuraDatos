@@ -15,7 +15,7 @@ namespace PryEstructuraDatos
         public clsNodo Raiz
         {
             get { return PrimeroNodo; }
-            set { PrimeroNodo = value;}
+            set { PrimeroNodo = value; }
         }
 
         public void Agregar(clsNodo Nuevo)
@@ -30,7 +30,7 @@ namespace PryEstructuraDatos
             {
                 clsNodo NodoPadre = Raiz;
                 clsNodo Aux = Raiz;
-                while(Aux != null)
+                while (Aux != null)
                 {
                     NodoPadre = Aux;
                     if (Nuevo.Codigo < Aux.Codigo)
@@ -53,103 +53,146 @@ namespace PryEstructuraDatos
             }
         }
 
-
-        public void Recorrer(ComboBox Lista, bool ascendente)
+        //IN ORDEN ASCENDENTE
+        //COMBOBOX
+        public void RecorrerComboAsc(ComboBox Lista)
         {
             Lista.Items.Clear();
-            if (ascendente)
-            {
-                InOrdenAsc(Lista, Raiz);
-            }
-            else
-            {
-                InOrdenDes(Lista, Raiz);
-            }
-
+            InOrdenComboAsc(Lista, Raiz);
         }
-        private void InOrdenAsc(ComboBox Lst, clsNodo R)
+        private void InOrdenComboAsc(ComboBox Lst, clsNodo R)
         {
             if (R.Izquierdo != null)
             {
-                InOrdenAsc(Lst, R.Izquierdo);
+                InOrdenComboAsc(Lst, R.Izquierdo);
             }
             Lst.Items.Add(R.Codigo);
             if (R.Derecho != null)
             {
-                InOrdenAsc(Lst, R.Derecho);
-            }
-
-        }
-        private void InOrdenDes(ComboBox Lst, clsNodo R)
-        {
-            if (R.Derecho != null)
-            {
-                InOrdenDes(Lst, R.Derecho);
-            }
-            Lst.Items.Add(R.Codigo);
-            if (R.Izquierdo != null)
-            {
-                InOrdenDes(Lst, R.Izquierdo);
+                InOrdenComboAsc(Lst, R.Derecho);
             }
         }
-
-        public void Recorrer(DataGridView Grilla, bool ascendente)
+        //GRILLA
+        public void RecorrerGrillaAsc(DataGridView Grilla)
         {
             Grilla.Rows.Clear();
-            if (ascendente)
-            {
-                InOrdenAsc(Grilla, Raiz);
-            }
-            else
-            {
-                InOrdenDes(Grilla, Raiz);
-            }
-           
-            //PreOrden(Raiz, Grilla);
-            //PostOrden(Raiz, Grilla);
-
+            InOrdenGrillaAsc(Grilla, Raiz);
         }
-        private void InOrdenAsc(DataGridView Dgv, clsNodo R)
+        private void InOrdenGrillaAsc(DataGridView Dgv, clsNodo R)
         {
             if (R.Izquierdo != null)
             {
-                InOrdenAsc(Dgv, R.Izquierdo);
+                InOrdenGrillaAsc(Dgv, R.Izquierdo);
             }
             Dgv.Rows.Add(R.Codigo, R.Nombre, R.Tramite);
             if (R.Derecho != null)
             {
-                InOrdenAsc(Dgv, R.Derecho);
+                InOrdenGrillaAsc(Dgv, R.Derecho);
             }
         }
-        private void InOrdenDes(DataGridView Dgv, clsNodo R)
+        //EXCEL
+        public void RecorrerAdAsc()
+        {
+            StreamWriter AD = new StreamWriter("ArbolBinarioInOrden.csv", false, Encoding.UTF8);
+
+            AD.WriteLine("Lista de espera\n");
+            AD.WriteLine("Codigo;Nombre;Tramite");
+            InOrdenAdAsc(Raiz, AD);
+            AD.Close();
+
+        }
+        private void InOrdenAdAsc(clsNodo R, StreamWriter writer)
+        {
+            if (R != null)
+            {
+                InOrdenAdAsc(R.Izquierdo, writer);
+                writer.Write($"{R.Codigo};{R.Nombre};{R.Tramite}");
+                InOrdenAdAsc(R.Derecho, writer);
+            }
+        }
+
+
+
+        //IN ORDEN DESCENDENTE
+        //COMBOBOX
+        public void RecorrerInordenComboDes(ComboBox Lista)
+        {
+            Lista.Items.Clear();
+            InOrdenComboDes(Lista, Raiz);
+        }
+        private void InOrdenComboDes(ComboBox Lst, clsNodo R)
         {
             if (R.Derecho != null)
             {
-                InOrdenDes(Dgv, R.Derecho);
+                InOrdenComboDes(Lst, R.Derecho);
+            }
+            Lst.Items.Add(R.Codigo);
+            if (R.Izquierdo != null)
+            {
+                InOrdenComboDes(Lst, R.Izquierdo);
+            }
+        }
+        //GRILLA
+        public void RecorrerGrillaDes(DataGridView Grilla)
+        {
+            Grilla.Rows.Clear();
+            InOrdenGrillaDes(Grilla, Raiz);
+        }
+        private void InOrdenGrillaDes(DataGridView Dgv, clsNodo R)
+        {
+            if (R.Derecho != null)
+            {
+                InOrdenGrillaDes(Dgv, R.Derecho);
             }
             Dgv.Rows.Add(R.Codigo, R.Nombre, R.Tramite);
             if (R.Izquierdo != null)
             {
-                InOrdenDes(Dgv, R.Izquierdo);
+                InOrdenGrillaDes(Dgv, R.Izquierdo);
             }
         }
-
-        public void PreOrden(clsNodo R, DataGridView Dgv)
+        //AD
+        public void RecorrerDes()
         {
-            
+            StreamWriter AD = new StreamWriter("ArbolBinarioInOrden.csv", false, Encoding.UTF8);
+
+            AD.WriteLine("Lista de espera\n");
+            AD.WriteLine("Codigo;Nombre;Tramite");
+            InOrdenDes(Raiz, AD);
+            AD.Close();
+
+        }
+        private void InOrdenDes(clsNodo R, StreamWriter writer)
+        {
+            if (R.Derecho != null)
+            {
+                InOrdenDes(R.Derecho, writer);
+                writer.Write($"{R.Codigo};{R.Nombre};{R.Tramite}");
+                InOrdenDes(R.Izquierdo, writer);
+            }
+        }
+        //PRE ORDEN
+        public void RecorrerGrillaPre(DataGridView Grilla)
+        {
+            Grilla.Rows.Clear();
+            PreOrdenGrilla(Raiz, Grilla);
+        }
+
+        public void PreOrdenGrilla(clsNodo R, DataGridView Dgv)
+        {
+
             Dgv.Rows.Add(Dgv);
             if (R.Izquierdo != null)
             {
-                PreOrden(R.Izquierdo, Dgv);
+                PreOrdenGrilla(R.Izquierdo, Dgv);
             }
             if (R.Derecho != null)
             {
-                PreOrden(R.Derecho, Dgv);
+                PreOrdenGrilla(R.Derecho, Dgv);
             }
         }
         public void PostOrden(clsNodo R, DataGridView Dgv)
         {
-            
+
             if (R.Izquierdo != null)
             {
                 PostOrden(R.Izquierdo, Dgv);
@@ -182,33 +225,116 @@ namespace PryEstructuraDatos
                 PreOrden(R.Derecho, NodoPadre);
             }
         }
-        //public void Recorrer()
-        //{
-        //   StreamWriter AD = new StreamWriter("Cola.csv", false, Encoding.UTF8);
-           
-        //    InOrdenAsc(AD, Raiz);
-        //    AD.Close();
-          
-        //}
-        //private void InOrdenAsc(TextWriter AD, clsNodo R)
-        //{
-        //    if (R.Izquierdo != null)
-        //    {
-        //        InOrdenAsc(AD, R.Izquierdo);
-        //    }
-        //    while (Aux != null)
-        //    {
-        //        AD.Write(Aux.Codigo);
-        //        AD.Write(";");
-        //        AD.Write(Aux.Nombre);
-        //        AD.Write(";");
-        //        AD.WriteLine(Aux.Tramite);
-        //        Aux = Aux.Siguiente;
-        //    }
-        //    if (R.Derecho != null)
-        //    {
-        //        InOrdenAsc(AD, R.Derecho);
-        //    }
-        //}
+       
+       
+        
+        public void RecorrerPre()
+        {
+            StreamWriter AD = new StreamWriter("ArbolBinarioInOrden.csv", false, Encoding.UTF8);
+
+            PreOrden(Raiz, AD);
+            AD.Close();
+
+        }
+        private void PreOrden(clsNodo R, StreamWriter writer)
+        {
+            if (R != null)
+            {
+                writer.Write($"{R.Codigo};{R.Nombre};{R.Tramite}");
+                PreOrden(R.Izquierdo, writer);
+                PreOrden(R.Derecho, writer);
+            }
+        }
+        public void RecorrerPost()
+        {
+            StreamWriter AD = new StreamWriter("ArbolBinarioInOrden.csv", false, Encoding.UTF8);
+
+            PostOrden(Raiz, AD);
+            AD.Close();
+
+        }
+        private void PostOrden(clsNodo R, StreamWriter writer)
+        {
+            if (R != null)
+            {
+                
+                PostOrden(R.Izquierdo, writer);
+                PostOrden(R.Derecho, writer);
+                writer.Write($"{R.Codigo};{R.Nombre};{R.Tramite}");
+            }
+        }
+        
+        public clsNodo BuscarCodigo(Int32 cod)
+        {
+            clsNodo Aux = Raiz;
+            while (Aux != null)
+            {
+                if (cod == Aux.Codigo) break;
+                if (cod < Aux.Codigo) Aux = Aux.Izquierdo;
+                else Aux = Aux.Derecho;
+
+            }
+            return Aux;
+        }
+        private clsNodo[] Vector = new clsNodo[100];
+        private Int32 i = 0;
+        public void Equilibrar()
+        {
+            i = 0;
+            GrabarVectorInOrden(Raiz);
+            Raiz = null;
+            EquilibrarArbol(0, i - 1);
+        }
+
+        public void GrabarVectorInOrden(clsNodo NodoPadre)
+        {
+            if (NodoPadre.Izquierdo != null)
+            {
+                GrabarVectorInOrden(NodoPadre.Izquierdo);
+            }
+            Vector[i] = NodoPadre;
+            i = i + 1;
+            if (NodoPadre.Derecho != null)
+            {
+                GrabarVectorInOrden(NodoPadre.Derecho);
+            }
+        }
+        public void EquilibrarArbol(Int32 ini, Int32 fin)
+        {
+            Int32 m = (ini + fin) / 2;
+            if (ini <= fin)
+            {
+                Agregar(Vector[m]);
+                EquilibrarArbol(ini, m - 1);
+                EquilibrarArbol(m + 1, fin);
+            }
+        }
+
+        public void Eliminar(Int32 codigo)
+        {
+            i = 0;
+            GrabarVectorInOrden(Raiz, codigo);
+            Raiz = null;
+            EquilibrarArbol(0, i - 1);
+        }
+
+        public void GrabarVectorInOrden(clsNodo NodoPadre, Int32 Codigo)
+        {
+            if (NodoPadre.Izquierdo != null)
+            {
+                GrabarVectorInOrden(NodoPadre.Izquierdo, Codigo);
+            }
+            if (NodoPadre.Codigo != Codigo)
+            {
+                Vector[i] = NodoPadre;
+                i = i + 1;
+            }
+            if (NodoPadre.Derecho != null)
+            {
+                GrabarVectorInOrden(NodoPadre.Derecho, Codigo);
+            }
+        }
+
+
     }
 }

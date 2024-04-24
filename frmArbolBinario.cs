@@ -30,6 +30,7 @@ namespace PryEstructuraDatos
             {
                 Arbol.Recorrer(dgvGrillaLista, true);
                 Arbol.Recorrer(cboEliminar, true);
+                Arbol.RecorrerAsc();
             }
         }
         clsArbolBinario Arbol = new clsArbolBinario();
@@ -49,20 +50,24 @@ namespace PryEstructuraDatos
             {
                 Arbol.Recorrer(dgvGrillaLista, true);
                 Arbol.Recorrer(cboEliminar, true);
+                Arbol.RecorrerAsc();
             }
             if (rdoInordendes.Checked == true)
             {
                 Arbol.Recorrer(dgvGrillaLista, false);
                 Arbol.Recorrer(cboEliminar, false);
+                Arbol.RecorrerDes();
             }
             if (rdoPreorden.Checked == true)
             {
                 Arbol.Recorrer(dgvGrillaLista, true);
                 Arbol.Recorrer(tvwArbolBinario);
+                Arbol.RecorrerPre();
             }
             if (rdoPostorden.Checked == true)
             {
                 Arbol.Recorrer(dgvGrillaLista, true);
+                Arbol.RecorrerPost();
 
             }
         }
@@ -82,6 +87,7 @@ namespace PryEstructuraDatos
             {
                 Arbol.Recorrer(dgvGrillaLista, true);
                 Arbol.Recorrer(tvwArbolBinario);
+                Arbol.RecorrerPre();
             }
           
         }
@@ -91,6 +97,7 @@ namespace PryEstructuraDatos
             if (rdoPostorden.Checked==true)
             {
                 Arbol.Recorrer(dgvGrillaLista, true);
+                Arbol.RecorrerPost();
             }
             
         }
@@ -114,6 +121,7 @@ namespace PryEstructuraDatos
             {
                 Arbol.Recorrer(dgvGrillaLista, false);
                 Arbol.Recorrer(cboEliminar, false);
+                Arbol.RecorrerDes();
             }
 
         }
