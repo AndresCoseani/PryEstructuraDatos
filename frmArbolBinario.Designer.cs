@@ -50,6 +50,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnEquilibrar = new System.Windows.Forms.Button();
             this.tvwArbolBinario = new System.Windows.Forms.TreeView();
+            this.rdoInordendes = new System.Windows.Forms.RadioButton();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGrillaLista)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -58,6 +59,7 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.rdoInordendes);
             this.groupBox3.Controls.Add(this.rdoPostorden);
             this.groupBox3.Controls.Add(this.rdoPreorden);
             this.groupBox3.Controls.Add(this.rdoInorden);
@@ -68,40 +70,40 @@
             this.groupBox3.Size = new System.Drawing.Size(638, 213);
             this.groupBox3.TabIndex = 14;
             this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Listado en una Lista y una Grilla";
+            this.groupBox3.Text = "Listado del árbol";
             // 
             // rdoPostorden
             // 
             this.rdoPostorden.AutoSize = true;
-            this.rdoPostorden.Location = new System.Drawing.Point(34, 142);
+            this.rdoPostorden.Location = new System.Drawing.Point(22, 163);
             this.rdoPostorden.Name = "rdoPostorden";
             this.rdoPostorden.Size = new System.Drawing.Size(99, 21);
             this.rdoPostorden.TabIndex = 4;
-            this.rdoPostorden.TabStop = true;
             this.rdoPostorden.Text = "Post-Orden";
             this.rdoPostorden.UseVisualStyleBackColor = true;
+            this.rdoPostorden.CheckedChanged += new System.EventHandler(this.rdoPostorden_CheckedChanged);
             // 
             // rdoPreorden
             // 
             this.rdoPreorden.AutoSize = true;
-            this.rdoPreorden.Location = new System.Drawing.Point(34, 97);
+            this.rdoPreorden.Checked = true;
+            this.rdoPreorden.Location = new System.Drawing.Point(22, 125);
             this.rdoPreorden.Name = "rdoPreorden";
             this.rdoPreorden.Size = new System.Drawing.Size(93, 21);
             this.rdoPreorden.TabIndex = 3;
             this.rdoPreorden.TabStop = true;
             this.rdoPreorden.Text = "Pre-Orden";
             this.rdoPreorden.UseVisualStyleBackColor = true;
+            this.rdoPreorden.CheckedChanged += new System.EventHandler(this.rdoPreorden_CheckedChanged);
             // 
             // rdoInorden
             // 
             this.rdoInorden.AutoSize = true;
-            this.rdoInorden.Checked = true;
-            this.rdoInorden.Location = new System.Drawing.Point(34, 51);
+            this.rdoInorden.Location = new System.Drawing.Point(22, 51);
             this.rdoInorden.Name = "rdoInorden";
-            this.rdoInorden.Size = new System.Drawing.Size(82, 21);
+            this.rdoInorden.Size = new System.Drawing.Size(164, 21);
             this.rdoInorden.TabIndex = 2;
-            this.rdoInorden.TabStop = true;
-            this.rdoInorden.Text = "In-Orden";
+            this.rdoInorden.Text = "In-Orden Ascendiente";
             this.rdoInorden.UseVisualStyleBackColor = true;
             this.rdoInorden.CheckedChanged += new System.EventHandler(this.rdoInorden_CheckedChanged);
             // 
@@ -221,6 +223,7 @@
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(88, 23);
             this.txtCodigo.TabIndex = 4;
+            this.txtCodigo.TextChanged += new System.EventHandler(this.txtCodigo_TextChanged);
             this.txtCodigo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCodigo_KeyPress);
             // 
             // label3
@@ -265,6 +268,17 @@
             this.tvwArbolBinario.Name = "tvwArbolBinario";
             this.tvwArbolBinario.Size = new System.Drawing.Size(193, 197);
             this.tvwArbolBinario.TabIndex = 15;
+            // 
+            // rdoInordendes
+            // 
+            this.rdoInordendes.AutoSize = true;
+            this.rdoInordendes.Location = new System.Drawing.Point(22, 87);
+            this.rdoInordendes.Name = "rdoInordendes";
+            this.rdoInordendes.Size = new System.Drawing.Size(173, 21);
+            this.rdoInordendes.TabIndex = 5;
+            this.rdoInordendes.Text = "In-Orden Descendiente";
+            this.rdoInordendes.UseVisualStyleBackColor = true;
+            this.rdoInordendes.CheckedChanged += new System.EventHandler(this.rdoInordendes_CheckedChanged);
             // 
             // frmArbolBinario
             // 
@@ -315,5 +329,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnEquilibrar;
         private System.Windows.Forms.TreeView tvwArbolBinario;
+        private System.Windows.Forms.RadioButton rdoInordendes;
     }
 }

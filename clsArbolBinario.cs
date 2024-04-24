@@ -54,10 +54,18 @@ namespace PryEstructuraDatos
         }
 
 
-        public void Recorrer(ComboBox Lista)
+        public void Recorrer(ComboBox Lista, bool ascendente)
         {
             Lista.Items.Clear();
-            InOrdenAsc(Lista, Raiz);
+            if (ascendente)
+            {
+                InOrdenAsc(Lista, Raiz);
+            }
+            else
+            {
+                InOrdenDes(Lista, Raiz);
+            }
+
         }
         private void InOrdenAsc(ComboBox Lst, clsNodo R)
         {
@@ -70,12 +78,36 @@ namespace PryEstructuraDatos
             {
                 InOrdenAsc(Lst, R.Derecho);
             }
+
+        }
+        private void InOrdenDes(ComboBox Lst, clsNodo R)
+        {
+            if (R.Derecho != null)
+            {
+                InOrdenDes(Lst, R.Derecho);
+            }
+            Lst.Items.Add(R.Codigo);
+            if (R.Izquierdo != null)
+            {
+                InOrdenDes(Lst, R.Izquierdo);
+            }
         }
 
-        public void Recorrer(DataGridView Grilla)
+        public void Recorrer(DataGridView Grilla, bool ascendente)
         {
             Grilla.Rows.Clear();
-            InOrdenAsc(Grilla, Raiz);
+            if (ascendente)
+            {
+                InOrdenAsc(Grilla, Raiz);
+            }
+            else
+            {
+                InOrdenDes(Grilla, Raiz);
+            }
+           
+            //PreOrden(Raiz, Grilla);
+            //PostOrden(Raiz, Grilla);
+
         }
         private void InOrdenAsc(DataGridView Dgv, clsNodo R)
         {
@@ -89,6 +121,19 @@ namespace PryEstructuraDatos
                 InOrdenAsc(Dgv, R.Derecho);
             }
         }
+        private void InOrdenDes(DataGridView Dgv, clsNodo R)
+        {
+            if (R.Derecho != null)
+            {
+                InOrdenDes(Dgv, R.Derecho);
+            }
+            Dgv.Rows.Add(R.Codigo, R.Nombre, R.Tramite);
+            if (R.Izquierdo != null)
+            {
+                InOrdenDes(Dgv, R.Izquierdo);
+            }
+        }
+
         public void PreOrden(clsNodo R, DataGridView Dgv)
         {
             

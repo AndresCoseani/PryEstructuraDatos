@@ -19,21 +19,23 @@ namespace PryEstructuraDatos
 
         private void frmArbolBinario_Load(object sender, EventArgs e)
         {
-
+            btnAgregar.Enabled = false;
+            btnEliminar.Enabled = false;
+            btnEquilibrar.Enabled = false;
         }
 
         private void rdoInorden_CheckedChanged(object sender, EventArgs e)
         {
-
+            if (rdoInorden.Checked == true)
+            {
+                Arbol.Recorrer(dgvGrillaLista, true);
+                Arbol.Recorrer(cboEliminar, true);
+            }
         }
         clsArbolBinario Arbol = new clsArbolBinario();
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            if (txtCodigo.Text == "")
-            {
-                MessageBox.Show("Ingrese un código");
-
-            }
+           
             clsNodo ObjNodo = new clsNodo();
             ObjNodo.Codigo = Convert.ToInt32(txtCodigo.Text);
             ObjNodo.Nombre = txtNombre.Text;
@@ -43,23 +45,25 @@ namespace PryEstructuraDatos
             txtCodigo.Text = "";
             txtNombre.Text = "";
             txtTramite.Text = "";
-            if (rdoInorden.Checked==true)
+            if (rdoInorden.Checked == true)
             {
-                Arbol.Recorrer(dgvGrillaLista);
-                Arbol.Recorrer(cboEliminar);
-                Arbol.Recorrer(tvwArbolBinario);
+                Arbol.Recorrer(dgvGrillaLista, true);
+                Arbol.Recorrer(cboEliminar, true);
+            }
+            if (rdoInordendes.Checked == true)
+            {
+                Arbol.Recorrer(dgvGrillaLista, false);
+                Arbol.Recorrer(cboEliminar, false);
             }
             if (rdoPreorden.Checked == true)
             {
-                Arbol.Recorrer(dgvGrillaLista);
-                Arbol.Recorrer(cboEliminar);
+                Arbol.Recorrer(dgvGrillaLista, true);
                 Arbol.Recorrer(tvwArbolBinario);
             }
             if (rdoPostorden.Checked == true)
             {
-                Arbol.Recorrer(dgvGrillaLista);
-                Arbol.Recorrer(cboEliminar);
-                Arbol.Recorrer(tvwArbolBinario);
+                Arbol.Recorrer(dgvGrillaLista, true);
+
             }
         }
 
@@ -69,6 +73,49 @@ namespace PryEstructuraDatos
             {
                 e.Handled = true;
             }
+            
+        }
+
+        private void rdoPreorden_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rdoPreorden.Checked == true)
+            {
+                Arbol.Recorrer(dgvGrillaLista, true);
+                Arbol.Recorrer(tvwArbolBinario);
+            }
+          
+        }
+
+        private void rdoPostorden_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rdoPostorden.Checked==true)
+            {
+                Arbol.Recorrer(dgvGrillaLista, true);
+            }
+            
+        }
+
+        private void txtCodigo_TextChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtCodigo.Text))
+            {
+
+                btnAgregar.Enabled = false;
+            }
+            else
+            {
+                btnAgregar.Enabled = true;
+            }
+        }
+
+        private void rdoInordendes_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rdoInordendes.Checked)
+            {
+                Arbol.Recorrer(dgvGrillaLista, false);
+                Arbol.Recorrer(cboEliminar, false);
+            }
+
         }
     }
 }
