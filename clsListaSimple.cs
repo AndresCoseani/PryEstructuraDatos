@@ -19,13 +19,13 @@ namespace PryEstructuraDatos
 
         public void Agregar(clsNodo Nuevo)
         {
-            if (Primero==null)
+            if (Primero == null)
             {
                 Primero = Nuevo;
             }
             else
             {
-                if (Nuevo.Codigo<= Primero.Codigo)
+                if (Nuevo.Codigo <= Primero.Codigo)
                 {
                     Nuevo.Siguiente = Primero;
                     Primero = Nuevo;
@@ -34,20 +34,25 @@ namespace PryEstructuraDatos
                 {
                     clsNodo aux = Primero;
                     clsNodo ant = Primero;
-                    while (Nuevo.Codigo>aux.Codigo)
+                    while (Nuevo.Codigo > aux.Codigo)
                     {
                         ant = aux;
                         aux = aux.Siguiente;
-                        if (aux == null) break;
+
+                        if (aux == null)
+                        {
+                            break;
+                        }
                     }
                     ant.Siguiente = Nuevo;
                     Nuevo.Siguiente = aux;
+
                 }
             }
         }
         public void Eliminar(Int32 Cod)
         {
-            if (Cod==Primero.Codigo)
+            if (Cod == Primero.Codigo)
             {
                 Primero = Primero.Siguiente;
             }
@@ -55,14 +60,14 @@ namespace PryEstructuraDatos
             {
                 clsNodo aux = Primero;
                 clsNodo ant = Primero;
-                while (Cod!=aux.Codigo)
+
+                while (Cod != aux.Codigo)
                 {
                     ant = aux;
                     aux = aux.Siguiente;
-                    
                 }
-                ant.Siguiente = aux.Siguiente;
-                
+
+                ant.Siguiente = ant.Siguiente;
             }
         }
         public void Recorrer(DataGridView Grilla)
@@ -93,7 +98,7 @@ namespace PryEstructuraDatos
             combo.Items.Clear();
             while (Aux != null)
             {
-                combo.Items.Add(Aux.Nombre);
+                combo.Items.Add(Aux.Codigo);
                 Aux = Aux.Siguiente;
             }
 

@@ -31,7 +31,7 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtTramite = new System.Windows.Forms.TextBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
-            this.Agregar = new System.Windows.Forms.Button();
+            this.btnAgregar = new System.Windows.Forms.Button();
             this.txtCodigo = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -62,7 +62,7 @@
             // 
             this.groupBox1.Controls.Add(this.txtTramite);
             this.groupBox1.Controls.Add(this.txtNombre);
-            this.groupBox1.Controls.Add(this.Agregar);
+            this.groupBox1.Controls.Add(this.btnAgregar);
             this.groupBox1.Controls.Add(this.txtCodigo);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
@@ -89,15 +89,15 @@
             this.txtNombre.Size = new System.Drawing.Size(114, 23);
             this.txtNombre.TabIndex = 5;
             // 
-            // Agregar
+            // btnAgregar
             // 
-            this.Agregar.Location = new System.Drawing.Point(6, 151);
-            this.Agregar.Name = "Agregar";
-            this.Agregar.Size = new System.Drawing.Size(196, 47);
-            this.Agregar.TabIndex = 3;
-            this.Agregar.Text = "Agregar";
-            this.Agregar.UseVisualStyleBackColor = true;
-            this.Agregar.Click += new System.EventHandler(this.Agregar_Click);
+            this.btnAgregar.Location = new System.Drawing.Point(6, 151);
+            this.btnAgregar.Name = "btnAgregar";
+            this.btnAgregar.Size = new System.Drawing.Size(196, 47);
+            this.btnAgregar.TabIndex = 3;
+            this.btnAgregar.Text = "Agregar";
+            this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.Agregar_Click);
             // 
             // txtCodigo
             // 
@@ -303,7 +303,7 @@
         private System.Windows.Forms.TextBox txtTramite;
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.TextBox txtCodigo;
-        private System.Windows.Forms.Button Agregar;
+        private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;

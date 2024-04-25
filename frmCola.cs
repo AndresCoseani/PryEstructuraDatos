@@ -19,11 +19,7 @@ namespace PryEstructuraDatos
         clsCola FilaDePersonas = new clsCola();
         private void Agregar_Click(object sender, EventArgs e)
         {
-            if (txtCodigo.Text == "")
-            {
-                MessageBox.Show("Ingrese un código");
-
-            }
+            
             clsNodo ObjNodo = new clsNodo();
             ObjNodo.Codigo = Convert.ToInt32(txtCodigo.Text);
             ObjNodo.Nombre = txtNombre.Text;
@@ -59,12 +55,21 @@ namespace PryEstructuraDatos
 
         private void frmCola_Load(object sender, EventArgs e)
         {
-
+            btnAgregar.Enabled = false;
+            
         }
 
         private void txtCodigo_TextChanged(object sender, EventArgs e)
         {
+            if (string.IsNullOrWhiteSpace(txtCodigo.Text))
+            {
 
+                btnAgregar.Enabled = false;
+            }
+            else
+            {
+                btnAgregar.Enabled = true;
+            }
         }
 
         private void txtCodigo_KeyPress(object sender, KeyPressEventArgs e)

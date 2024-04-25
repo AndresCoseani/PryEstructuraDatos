@@ -15,20 +15,19 @@ namespace PryEstructuraDatos
         public frmPila()
         {
             InitializeComponent();
+           
+           
+            
         }
         clsPila Pila = new clsPila();
         private void frmPila_Load(object sender, EventArgs e)
         {
-
+            btnAgregar.Enabled = false;
         }
 
         private void Agregar_Click(object sender, EventArgs e)
         {
-            if (txtCodigo.Text == "")
-            {
-                MessageBox.Show("Ingrese un código");
-
-            }
+            
             clsNodo ObjNodo = new clsNodo();
             ObjNodo.Codigo = Convert.ToInt32(txtCodigo.Text);
             ObjNodo.Nombre = txtNombre.Text;
@@ -67,6 +66,45 @@ namespace PryEstructuraDatos
             if (!char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back)
             {
                 e.Handled = true;
+            }
+        }
+
+        private void txtCodigo_TextChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtCodigo.Text))
+            {
+
+                btnAgregar.Enabled = false;
+            }
+            else
+            {
+                btnAgregar.Enabled = true;
+            }
+        }
+
+        private void txtNombre_TextChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtNombre.Text))
+            {
+
+                btnAgregar.Enabled = false;
+            }
+            else
+            {
+                btnAgregar.Enabled = true;
+            }
+        }
+
+        private void txtTramite_TextChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtTramite.Text))
+            {
+
+                btnAgregar.Enabled = false;
+            }
+            else
+            {
+                btnAgregar.Enabled = true;
             }
         }
     }

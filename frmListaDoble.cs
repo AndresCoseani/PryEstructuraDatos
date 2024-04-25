@@ -18,57 +18,41 @@ namespace PryEstructuraDatos
     {
         public frmListaDoble()
         {
-            InitializeComponent();
-
-           
-        }
+            InitializeComponent();        }
 
         private void frmListaDoble_Load(object sender, EventArgs e)
         {
-            rdoAscendiente.Checked = true;
-        }
+            btnAgregar.Enabled = false;
       
-        
+        }
+
         clsListaDoble ListaDoble = new clsListaDoble();
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            if (txtCodigo.Text == "")
-            {
-                MessageBox.Show("Ingrese un código");
-              
-            }
-           
-
-                int codigo = Convert.ToInt32(txtCodigo.Text);
-                clsNodo ObjNodo = new clsNodo();
-                ObjNodo.Codigo = codigo;
-                ObjNodo.Nombre = txtNombre.Text;
-                ObjNodo.Tramite = txtTramite.Text;
-                ListaDoble.Agregar(ObjNodo);//vinculamos el objeto nodo a la cola
-                if (rdoAscendiente.Checked == true)
-                {
-                    ListaDoble.Recorrer(dgvGrillaListaDoble);
-                    ListaDoble.Recorrer(lstListaDoble);
-                    ListaDoble.Recorrer(cboEliminar);
-                    ListaDoble.Recorrer();
-                }
-                if (rdoDescendiente.Checked == true)
-                {
-                    ListaDoble.RecorrerDes(dgvGrillaListaDoble);
-                    ListaDoble.RecorrerDes(lstListaDoble);
-                    ListaDoble.RecorrerDes(cboEliminar);
-                    ListaDoble.RecorrerDes();
-                }
-                txtCodigo.Text = "";
-                txtNombre.Text = "";
-                txtTramite.Text = "";
+            int codigo = Convert.ToInt32(txtCodigo.Text);
+            clsNodo ObjNodo = new clsNodo();
+            ObjNodo.Codigo = codigo;
+            ObjNodo.Nombre = txtNombre.Text;
+            ObjNodo.Tramite = txtTramite.Text;
+            ListaDoble.Agregar(ObjNodo);//vinculamos el objeto nodo a la cola
+                
+            ListaDoble.Recorrer(dgvGrillaListaDoble);
+            ListaDoble.Recorrer(lstListaDoble);
+            ListaDoble.Recorrer(cboEliminar);
+                
+            txtCodigo.Text = "";
+            txtNombre.Text = "";
+            txtTramite.Text = "";
             
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            if (ListaDoble.Primero != null)
+            btnEliminar.Enabled = false;
+            if (cboEliminar.SelectedIndex != -1)
             {
+                if (ListaDoble.Primero != null)
+                {
                 Int32 x = Convert.ToInt32(cboEliminar.Text);
                 ListaDoble.Eliminar(x);
                 ListaDoble.Recorrer(dgvGrillaListaDoble);
@@ -76,15 +60,15 @@ namespace PryEstructuraDatos
                 ListaDoble.Recorrer(cboEliminar);
                 ListaDoble.Recorrer();
 
+                }
             }
             else
             {
                 MessageBox.Show("Seleccione un dato");
             }
-          
+            
         }
 
-       
         private void rdoAscendiente_CheckedChanged(object sender, EventArgs e)
         {
             if (rdoAscendiente.Checked == true)
@@ -118,7 +102,32 @@ namespace PryEstructuraDatos
 
         private void txtCodigo_TextChanged(object sender, EventArgs e)
         {
+            if (string.IsNullOrWhiteSpace(txtCodigo.Text))
+            {
 
+                btnAgregar.Enabled = false;
+            }
+            else
+            {
+                btnAgregar.Enabled = true;
+            }
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cboEliminar_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cboEliminar.SelectedIndex == -1)
+            {
+                btnEliminar.Enabled = false;
+            }
+            else
+            {
+                btnEliminar.Enabled = true;
+            }
         }
     }
 }

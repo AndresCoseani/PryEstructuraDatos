@@ -29,10 +29,11 @@
         private void InitializeComponent()
         {
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.rdoInordendes = new System.Windows.Forms.RadioButton();
             this.rdoPostorden = new System.Windows.Forms.RadioButton();
             this.rdoPreorden = new System.Windows.Forms.RadioButton();
             this.rdoInorden = new System.Windows.Forms.RadioButton();
-            this.dgvGrillaLista = new System.Windows.Forms.DataGridView();
+            this.dgvGrillaArbol = new System.Windows.Forms.DataGridView();
             this.Código = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Trámite = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -50,9 +51,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnEquilibrar = new System.Windows.Forms.Button();
             this.tvwArbolBinario = new System.Windows.Forms.TreeView();
-            this.rdoInordendes = new System.Windows.Forms.RadioButton();
             this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvGrillaLista)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvGrillaArbol)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -63,7 +63,7 @@
             this.groupBox3.Controls.Add(this.rdoPostorden);
             this.groupBox3.Controls.Add(this.rdoPreorden);
             this.groupBox3.Controls.Add(this.rdoInorden);
-            this.groupBox3.Controls.Add(this.dgvGrillaLista);
+            this.groupBox3.Controls.Add(this.dgvGrillaArbol);
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.Location = new System.Drawing.Point(14, 237);
             this.groupBox3.Name = "groupBox3";
@@ -71,6 +71,17 @@
             this.groupBox3.TabIndex = 14;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Listado del árbol";
+            // 
+            // rdoInordendes
+            // 
+            this.rdoInordendes.AutoSize = true;
+            this.rdoInordendes.Location = new System.Drawing.Point(22, 87);
+            this.rdoInordendes.Name = "rdoInordendes";
+            this.rdoInordendes.Size = new System.Drawing.Size(173, 21);
+            this.rdoInordendes.TabIndex = 5;
+            this.rdoInordendes.Text = "In-Orden Descendiente";
+            this.rdoInordendes.UseVisualStyleBackColor = true;
+            this.rdoInordendes.CheckedChanged += new System.EventHandler(this.rdoInordendes_CheckedChanged);
             // 
             // rdoPostorden
             // 
@@ -86,12 +97,10 @@
             // rdoPreorden
             // 
             this.rdoPreorden.AutoSize = true;
-            this.rdoPreorden.Checked = true;
             this.rdoPreorden.Location = new System.Drawing.Point(22, 125);
             this.rdoPreorden.Name = "rdoPreorden";
             this.rdoPreorden.Size = new System.Drawing.Size(93, 21);
             this.rdoPreorden.TabIndex = 3;
-            this.rdoPreorden.TabStop = true;
             this.rdoPreorden.Text = "Pre-Orden";
             this.rdoPreorden.UseVisualStyleBackColor = true;
             this.rdoPreorden.CheckedChanged += new System.EventHandler(this.rdoPreorden_CheckedChanged);
@@ -107,17 +116,17 @@
             this.rdoInorden.UseVisualStyleBackColor = true;
             this.rdoInorden.CheckedChanged += new System.EventHandler(this.rdoInorden_CheckedChanged);
             // 
-            // dgvGrillaLista
+            // dgvGrillaArbol
             // 
-            this.dgvGrillaLista.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvGrillaLista.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvGrillaArbol.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvGrillaArbol.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Código,
             this.Nombre,
             this.Trámite});
-            this.dgvGrillaLista.Location = new System.Drawing.Point(204, 29);
-            this.dgvGrillaLista.Name = "dgvGrillaLista";
-            this.dgvGrillaLista.Size = new System.Drawing.Size(427, 164);
-            this.dgvGrillaLista.TabIndex = 1;
+            this.dgvGrillaArbol.Location = new System.Drawing.Point(204, 29);
+            this.dgvGrillaArbol.Name = "dgvGrillaArbol";
+            this.dgvGrillaArbol.Size = new System.Drawing.Size(427, 164);
+            this.dgvGrillaArbol.TabIndex = 1;
             // 
             // Código
             // 
@@ -157,6 +166,7 @@
             this.cboEliminar.Name = "cboEliminar";
             this.cboEliminar.Size = new System.Drawing.Size(119, 24);
             this.cboEliminar.TabIndex = 8;
+            this.cboEliminar.SelectedIndexChanged += new System.EventHandler(this.cboEliminar_SelectedIndexChanged);
             // 
             // btnEliminar
             // 
@@ -166,6 +176,7 @@
             this.btnEliminar.TabIndex = 7;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // label4
             // 
@@ -269,17 +280,6 @@
             this.tvwArbolBinario.Size = new System.Drawing.Size(193, 197);
             this.tvwArbolBinario.TabIndex = 15;
             // 
-            // rdoInordendes
-            // 
-            this.rdoInordendes.AutoSize = true;
-            this.rdoInordendes.Location = new System.Drawing.Point(22, 87);
-            this.rdoInordendes.Name = "rdoInordendes";
-            this.rdoInordendes.Size = new System.Drawing.Size(173, 21);
-            this.rdoInordendes.TabIndex = 5;
-            this.rdoInordendes.Text = "In-Orden Descendiente";
-            this.rdoInordendes.UseVisualStyleBackColor = true;
-            this.rdoInordendes.CheckedChanged += new System.EventHandler(this.rdoInordendes_CheckedChanged);
-            // 
             // frmArbolBinario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -297,7 +297,7 @@
             this.Load += new System.EventHandler(this.frmArbolBinario_Load);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvGrillaLista)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvGrillaArbol)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
@@ -311,7 +311,7 @@
         private System.Windows.Forms.RadioButton rdoPostorden;
         private System.Windows.Forms.RadioButton rdoPreorden;
         private System.Windows.Forms.RadioButton rdoInorden;
-        private System.Windows.Forms.DataGridView dgvGrillaLista;
+        private System.Windows.Forms.DataGridView dgvGrillaArbol;
         private System.Windows.Forms.DataGridViewTextBoxColumn Código;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn Trámite;

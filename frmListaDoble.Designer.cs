@@ -129,6 +129,7 @@
             this.cboEliminar.Name = "cboEliminar";
             this.cboEliminar.Size = new System.Drawing.Size(119, 24);
             this.cboEliminar.TabIndex = 9;
+            this.cboEliminar.SelectedIndexChanged += new System.EventHandler(this.cboEliminar_SelectedIndexChanged);
             // 
             // btnEliminar
             // 
@@ -165,6 +166,7 @@
             this.groupBox1.TabIndex = 9;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Nuevo Elemento";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // btnAgregar
             // 
@@ -241,6 +243,7 @@
             // rdoAscendiente
             // 
             this.rdoAscendiente.AutoSize = true;
+            this.rdoAscendiente.Checked = true;
             this.rdoAscendiente.Location = new System.Drawing.Point(21, 22);
             this.rdoAscendiente.Name = "rdoAscendiente";
             this.rdoAscendiente.Size = new System.Drawing.Size(104, 21);

@@ -15,20 +15,19 @@ namespace PryEstructuraDatos
         public frmListaSimple()
         {
             InitializeComponent();
+            
+           
+           
         }
 
         private void frmListaSimple_Load(object sender, EventArgs e)
         {
-
+            btnAgregar.Enabled = false;
+            btnEliminar.Enabled = false;
         }
         clsListaSimple Lista= new clsListaSimple();
         private void Agregar_Click(object sender, EventArgs e)
         {
-            if (txtCodigo.Text == "")
-            {
-                MessageBox.Show("Ingrese un código");
-
-            }
             clsNodo ObjNodo = new clsNodo();
             ObjNodo.Codigo = Convert.ToInt32(txtCodigo.Text);
             ObjNodo.Nombre = txtNombre.Text;
@@ -64,7 +63,7 @@ namespace PryEstructuraDatos
 
         private void cboEliminar_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cboEliminar.Text=="")
+            if (cboEliminar.SelectedIndex == -1)
             {
                 btnEliminar.Enabled = false;
             }
@@ -80,6 +79,50 @@ namespace PryEstructuraDatos
             {
                 e.Handled = true;
             }
+        }
+
+        private void txtCodigo_TextChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtCodigo.Text))
+            {
+
+                btnAgregar.Enabled = false;
+            }
+            else
+            {
+                btnAgregar.Enabled = true;
+            }
+        }
+
+        private void txtNombre_TextChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtNombre.Text))
+            {
+
+                btnAgregar.Enabled = false;
+            }
+            else
+            {
+                btnAgregar.Enabled = true;
+            }
+        }
+
+        private void txtTramite_TextChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtTramite.Text))
+            {
+
+                btnAgregar.Enabled = false;
+            }
+            else
+            {
+                btnAgregar.Enabled = true;
+            }
+        }
+
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }
