@@ -77,9 +77,9 @@
             this.rdoInordendes.AutoSize = true;
             this.rdoInordendes.Location = new System.Drawing.Point(22, 87);
             this.rdoInordendes.Name = "rdoInordendes";
-            this.rdoInordendes.Size = new System.Drawing.Size(173, 21);
+            this.rdoInordendes.Size = new System.Drawing.Size(170, 21);
             this.rdoInordendes.TabIndex = 5;
-            this.rdoInordendes.Text = "In-Orden Descendiente";
+            this.rdoInordendes.Text = "In-Orden Descendente";
             this.rdoInordendes.UseVisualStyleBackColor = true;
             this.rdoInordendes.CheckedChanged += new System.EventHandler(this.rdoInordendes_CheckedChanged);
             // 
@@ -108,11 +108,13 @@
             // rdoInorden
             // 
             this.rdoInorden.AutoSize = true;
+            this.rdoInorden.Checked = true;
             this.rdoInorden.Location = new System.Drawing.Point(22, 51);
             this.rdoInorden.Name = "rdoInorden";
-            this.rdoInorden.Size = new System.Drawing.Size(164, 21);
+            this.rdoInorden.Size = new System.Drawing.Size(161, 21);
             this.rdoInorden.TabIndex = 2;
-            this.rdoInorden.Text = "In-Orden Ascendiente";
+            this.rdoInorden.TabStop = true;
+            this.rdoInorden.Text = "In-Orden Ascendente";
             this.rdoInorden.UseVisualStyleBackColor = true;
             this.rdoInorden.CheckedChanged += new System.EventHandler(this.rdoInorden_CheckedChanged);
             // 
@@ -127,6 +129,7 @@
             this.dgvGrillaArbol.Name = "dgvGrillaArbol";
             this.dgvGrillaArbol.Size = new System.Drawing.Size(427, 164);
             this.dgvGrillaArbol.TabIndex = 1;
+            this.dgvGrillaArbol.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvGrillaArbol_CellContentClick);
             // 
             // Código
             // 
@@ -272,6 +275,7 @@
             this.btnEquilibrar.TabIndex = 9;
             this.btnEquilibrar.Text = "Equilibrar";
             this.btnEquilibrar.UseVisualStyleBackColor = true;
+            this.btnEquilibrar.Click += new System.EventHandler(this.btnEquilibrar_Click);
             // 
             // tvwArbolBinario
             // 

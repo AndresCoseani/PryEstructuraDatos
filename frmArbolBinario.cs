@@ -21,7 +21,7 @@ namespace PryEstructuraDatos
         {
             btnAgregar.Enabled = false;
             btnEliminar.Enabled = false;
-            btnEquilibrar.Enabled = false;
+            
         }
 
         private void rdoInorden_CheckedChanged(object sender, EventArgs e)
@@ -41,6 +41,7 @@ namespace PryEstructuraDatos
             Arbol.Agregar(ObjNodo);//vinculamos el objeto nodo a la cola
             Arbol.RecorrerAscGrilla(dgvGrillaArbol);
             Arbol.RecorrerTree(tvwArbolBinario);
+            Arbol.RecorrerAscCombo(cboEliminar);
            
             txtCodigo.Text = "";
             txtNombre.Text = "";
@@ -59,7 +60,7 @@ namespace PryEstructuraDatos
 
         private void rdoPreorden_CheckedChanged(object sender, EventArgs e)
         {
-            Arbol.RecorrerAscGrilla(dgvGrillaArbol);
+            Arbol.RecorrerPreOrdenGrilla(dgvGrillaArbol);
             Arbol.RecorrerTree(tvwArbolBinario);
             Arbol.RecorrerPreOrdenAD();
         }
@@ -104,7 +105,34 @@ namespace PryEstructuraDatos
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-           
+            if (cboEliminar.SelectedIndex != -1)
+            {
+                Int32 x = Convert.ToInt32(cboEliminar.Text);
+                Arbol.Eliminar(x);
+                Arbol.RecorrerAscGrilla(dgvGrillaArbol);
+                Arbol.RecorrerTree(tvwArbolBinario);
+                Arbol.RecorrerAscCombo(cboEliminar);
+                Arbol.RecorrerInOrdenAscAD();
+            }
+            else
+            {
+                MessageBox.Show("Seleccione un dato");
+            }
+        }
+
+        private void dgvGrillaArbol_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void btnEquilibrar_Click(object sender, EventArgs e)
+        {
+            Arbol.Equilibrar();
+            Arbol.RecorrerAscGrilla(dgvGrillaArbol);
+            Arbol.RecorrerTree(tvwArbolBinario);
+            Arbol.RecorrerAscCombo(cboEliminar);
+            Arbol.RecorrerInOrdenAscAD();
+            
         }
     }
 }
