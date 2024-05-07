@@ -67,7 +67,7 @@ namespace PryEstructuraDatos
                     aux = aux.Siguiente;
                 }
 
-                ant.Siguiente = ant.Siguiente;
+                ant.Siguiente = aux.Siguiente;
             }
         }
         public void Recorrer(DataGridView Grilla)

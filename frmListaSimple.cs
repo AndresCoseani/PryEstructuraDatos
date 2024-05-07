@@ -96,28 +96,12 @@ namespace PryEstructuraDatos
 
         private void txtNombre_TextChanged(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(txtNombre.Text))
-            {
-
-                btnAgregar.Enabled = false;
-            }
-            else
-            {
-                btnAgregar.Enabled = true;
-            }
+           
         }
 
         private void txtTramite_TextChanged(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(txtTramite.Text))
-            {
-
-                btnAgregar.Enabled = false;
-            }
-            else
-            {
-                btnAgregar.Enabled = true;
-            }
+            
         }
 
         private void groupBox2_Enter(object sender, EventArgs e)

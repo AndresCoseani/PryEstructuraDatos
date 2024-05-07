@@ -93,7 +93,7 @@ namespace PryEstructuraDatos
 
         private void cboEliminar_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cboEliminar.SelectedIndex == -1)
+            if (cboEliminar.SelectedIndex == cboEliminar.Items.Count - 1)
             {
                 btnEliminar.Enabled = false;
             }
