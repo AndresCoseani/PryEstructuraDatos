@@ -141,7 +141,7 @@
             // arbolBinarioToolStripMenuItem
             // 
             this.arbolBinarioToolStripMenuItem.Name = "arbolBinarioToolStripMenuItem";
-            this.arbolBinarioToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.arbolBinarioToolStripMenuItem.Size = new System.Drawing.Size(166, 24);
             this.arbolBinarioToolStripMenuItem.Text = "Arbol Binario...";
             this.arbolBinarioToolStripMenuItem.Click += new System.EventHandler(this.arbolBinarioToolStripMenuItem_Click);
             // 
@@ -161,6 +161,7 @@
             this.operacionesConTablasDeBasesDeDatosToolStripMenuItem.Name = "operacionesConTablasDeBasesDeDatosToolStripMenuItem";
             this.operacionesConTablasDeBasesDeDatosToolStripMenuItem.Size = new System.Drawing.Size(343, 24);
             this.operacionesConTablasDeBasesDeDatosToolStripMenuItem.Text = "Operaciones con tablas de bases de datos...";
+            this.operacionesConTablasDeBasesDeDatosToolStripMenuItem.Click += new System.EventHandler(this.operacionesConTablasDeBasesDeDatosToolStripMenuItem_Click);
             // 
             // consultasEnLaBaseDeDatosToolStripMenuItem
             // 
@@ -179,6 +180,7 @@
             this.repasoDeOperacionesToolStripMenuItem.Name = "repasoDeOperacionesToolStripMenuItem";
             this.repasoDeOperacionesToolStripMenuItem.Size = new System.Drawing.Size(343, 24);
             this.repasoDeOperacionesToolStripMenuItem.Text = "Repaso de Operaciones...";
+            this.repasoDeOperacionesToolStripMenuItem.Click += new System.EventHandler(this.repasoDeOperacionesToolStripMenuItem_Click);
             // 
             // frmEstructuraDeDatos
             // 

@@ -41,7 +41,8 @@ namespace PryEstructuraDatos
 
         private void consultasEnLaBaseDeDatosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            frmBaseDatosConsulta cons = new frmBaseDatosConsulta();
+            cons.ShowDialog();
         }
 
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)
@@ -71,6 +72,18 @@ namespace PryEstructuraDatos
         {
             frmArbolBinario Arbol= new frmArbolBinario();
             Arbol.ShowDialog();
+        }
+
+        private void operacionesConTablasDeBasesDeDatosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmBaseDeDatosOperaciones Operaciones = new frmBaseDeDatosOperaciones();
+            Operaciones.ShowDialog();
+        }
+
+        private void repasoDeOperacionesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmBaseDatosRepasoOperaciones Repaso = new frmBaseDatosRepasoOperaciones();
+            Repaso.ShowDialog();
         }
     }
 }
