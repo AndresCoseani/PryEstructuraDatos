@@ -47,10 +47,13 @@
             // 
             // txtConsulta
             // 
+            this.txtConsulta.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtConsulta.Location = new System.Drawing.Point(6, 31);
+            this.txtConsulta.Multiline = true;
             this.txtConsulta.Name = "txtConsulta";
-            this.txtConsulta.Size = new System.Drawing.Size(809, 20);
+            this.txtConsulta.Size = new System.Drawing.Size(809, 129);
             this.txtConsulta.TabIndex = 1;
+            this.txtConsulta.TextChanged += new System.EventHandler(this.txtConsulta_TextChanged);
             // 
             // btnListar
             // 
@@ -60,13 +63,14 @@
             this.btnListar.TabIndex = 2;
             this.btnListar.Text = "Listar";
             this.btnListar.UseVisualStyleBackColor = true;
+            this.btnListar.Click += new System.EventHandler(this.btnListar_Click);
             // 
             // dgvConsultaBaseDeDatos
             // 
             this.dgvConsultaBaseDeDatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvConsultaBaseDeDatos.Location = new System.Drawing.Point(9, 196);
             this.dgvConsultaBaseDeDatos.Name = "dgvConsultaBaseDeDatos";
-            this.dgvConsultaBaseDeDatos.Size = new System.Drawing.Size(805, 249);
+            this.dgvConsultaBaseDeDatos.Size = new System.Drawing.Size(805, 377);
             this.dgvConsultaBaseDeDatos.TabIndex = 3;
             // 
             // frmBaseDatosConsulta
@@ -74,7 +78,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.ClientSize = new System.Drawing.Size(825, 454);
+            this.ClientSize = new System.Drawing.Size(825, 585);
             this.Controls.Add(this.dgvConsultaBaseDeDatos);
             this.Controls.Add(this.btnListar);
             this.Controls.Add(this.txtConsulta);
