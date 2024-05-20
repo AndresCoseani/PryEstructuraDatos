@@ -86,9 +86,11 @@ namespace PryEstructuraDatos
 
         private void btnInteseccion_Click(object sender, EventArgs e)
         {
-            String VarSQL = "SELECT * FROM LIBRO " +
-                "INTERSECT " +
-                "SELECT * FROM AUTOR ";
+            String VarSQL = "SELECT * FROM Libro " +
+                "WHERE IdAutor " +
+                "IN " +//en mysql se usa intersect pero en access es IN
+                "(SELECT DISTINCT IdAutor FROM Libro " +
+                "WHERE IdAutor <= 5) ";
                 
                 
 
