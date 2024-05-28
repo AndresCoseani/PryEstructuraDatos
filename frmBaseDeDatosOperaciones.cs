@@ -64,9 +64,9 @@ namespace PryEstructuraDatos
 
         private void btnSelecConvulcion_Click(object sender, EventArgs e)
         {
-            //proyecta todo de libro, donde ididioma sea mayor a 5 y menos a 15 y aparte idautor sea mayor a 10 y menor a 25
-            String VarSQL = "SELECT * FROM (SELECT * FROM Libro L WHERE L.IdIdioma > 5 AND L.IdIdioma < 15) " +
-                " A WHERE A.IdAutor > 10 AND A.IdAutor < 25";
+            //proyecta todo de libro, donde ididioma sea mayor a 5 y aparte idautor sea mayor a 10
+            String VarSQL = "SELECT * FROM (SELECT * FROM Libro L WHERE L.IdIdioma > 5) " +
+                " A WHERE A.IdAutor > 10";
             objBaseDatos.Listar(dgvBaseDeDatosOperaciones, VarSQL);
         }
 

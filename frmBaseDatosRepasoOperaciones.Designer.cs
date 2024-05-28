@@ -31,8 +31,8 @@
             this.dgvRepasoBaseDeDatos = new System.Windows.Forms.DataGridView();
             this.btnListar = new System.Windows.Forms.Button();
             this.lblOperacion = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.lblLineas = new System.Windows.Forms.Label();
+            this.cboRepaso = new System.Windows.Forms.ComboBox();
+            this.lblCaso = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRepasoBaseDeDatos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -41,18 +41,19 @@
             this.dgvRepasoBaseDeDatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvRepasoBaseDeDatos.Location = new System.Drawing.Point(12, 197);
             this.dgvRepasoBaseDeDatos.Name = "dgvRepasoBaseDeDatos";
-            this.dgvRepasoBaseDeDatos.Size = new System.Drawing.Size(800, 249);
+            this.dgvRepasoBaseDeDatos.Size = new System.Drawing.Size(825, 249);
             this.dgvRepasoBaseDeDatos.TabIndex = 7;
             // 
             // btnListar
             // 
             this.btnListar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnListar.Location = new System.Drawing.Point(726, 21);
+            this.btnListar.Location = new System.Drawing.Point(739, 21);
             this.btnListar.Name = "btnListar";
             this.btnListar.Size = new System.Drawing.Size(86, 31);
             this.btnListar.TabIndex = 6;
             this.btnListar.Text = "Listar";
             this.btnListar.UseVisualStyleBackColor = true;
+            this.btnListar.Click += new System.EventHandler(this.btnListar_Click);
             // 
             // lblOperacion
             // 
@@ -64,32 +65,55 @@
             this.lblOperacion.TabIndex = 4;
             this.lblOperacion.Text = "Operación a realizar en la base de datos:";
             // 
-            // comboBox1
+            // cboRepaso
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(284, 25);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(432, 24);
-            this.comboBox1.TabIndex = 8;
+            this.cboRepaso.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboRepaso.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboRepaso.FormattingEnabled = true;
+            this.cboRepaso.Items.AddRange(new object[] {
+            "Union",
+            "Intersección ",
+            "Diferencia",
+            "Seleccion Simple",
+            "Seleccion Multiple (Intersección)",
+            "Seleccion Multiple (Convulsion)",
+            "Orden",
+            "Proyección por un Atributo",
+            "Proyeccion por Multiatributo",
+            "Juntar",
+            "Union",
+            "Intersección ",
+            "Diferencia",
+            "Seleccion Simple",
+            "Seleccion Multiple (Intersección)",
+            "Seleccion Multiple (Convulsion)",
+            "Orden",
+            "Proyección por un Atributo",
+            "Proyeccion por Multiatributo",
+            "Juntar",
+            ""});
+            this.cboRepaso.Location = new System.Drawing.Point(284, 25);
+            this.cboRepaso.Name = "cboRepaso";
+            this.cboRepaso.Size = new System.Drawing.Size(432, 24);
+            this.cboRepaso.TabIndex = 8;
             // 
-            // lblLineas
+            // lblCaso
             // 
-            this.lblLineas.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblLineas.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLineas.Location = new System.Drawing.Point(13, 55);
-            this.lblLineas.Name = "lblLineas";
-            this.lblLineas.Size = new System.Drawing.Size(799, 122);
-            this.lblLineas.TabIndex = 10;
+            this.lblCaso.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblCaso.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCaso.Location = new System.Drawing.Point(13, 55);
+            this.lblCaso.Name = "lblCaso";
+            this.lblCaso.Size = new System.Drawing.Size(824, 122);
+            this.lblCaso.TabIndex = 10;
             // 
             // frmBaseDatosRepasoOperaciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.ClientSize = new System.Drawing.Size(824, 458);
-            this.Controls.Add(this.lblLineas);
-            this.Controls.Add(this.comboBox1);
+            this.ClientSize = new System.Drawing.Size(849, 458);
+            this.Controls.Add(this.lblCaso);
+            this.Controls.Add(this.cboRepaso);
             this.Controls.Add(this.dgvRepasoBaseDeDatos);
             this.Controls.Add(this.btnListar);
             this.Controls.Add(this.lblOperacion);
@@ -107,7 +131,7 @@
         private System.Windows.Forms.DataGridView dgvRepasoBaseDeDatos;
         private System.Windows.Forms.Button btnListar;
         private System.Windows.Forms.Label lblOperacion;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Label lblLineas;
+        private System.Windows.Forms.ComboBox cboRepaso;
+        private System.Windows.Forms.Label lblCaso;
     }
 }
